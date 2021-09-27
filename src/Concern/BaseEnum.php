@@ -16,7 +16,7 @@ use ReflectionClass;
  * Class BaseEnum
  * 数据库字段枚举基类
  *
- * @package App\Concern
+ * @package Xiaoetech\Xelib\Concern
  *
  * @method static getLabel($value)
  */

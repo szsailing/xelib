@@ -11,7 +11,7 @@ use Hyperf\Utils\Arr;
  * 通用Dao函数封装, 包含单表增删改查和联表列表查询, 联表函数实现在子类种覆写
  * Class BaseDao
  *
- * @package App\Concern
+ * @package Xiaoetech\Xelib\Concern
  */
 abstract class BaseDao {
 
