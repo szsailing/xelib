@@ -1,7 +1,7 @@
 {
     "name": "xiaoetech/xelib",
     "description": "xiaoetech PHP Library",
-    "type": "Library",
+    "type": "library",
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
