@@ -3,7 +3,7 @@
     "description": "xiaoetech PHP Library",
     "type": "Library",
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
     "autoload": {
         "psr-4": {
             "Xiaoetech\\Xelib\\": "src/"
