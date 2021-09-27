@@ -1,8 +1,6 @@
 <?php
 
-
-namespace App\Concern;
-
+namespace Xiaoetech\Xelib\Concern;
 
 use Hyperf\Database\Model\Model;
 use Hyperf\Database\Query\Builder;

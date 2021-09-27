@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Concern;
+namespace Xiaoetech\Xelib\Concern;
 
 
 use App\Constants\XZXResponseCode;
