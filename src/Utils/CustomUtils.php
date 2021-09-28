@@ -207,6 +207,19 @@ class CustomUtils
     }
 
     /**
+     * 当存在且不为空字符串的时候增加参数，将search对象里面的所有字段都复制到param
+     */
+    public static function xeAddAllSearch(&$param, $search)
+    {
+        foreach($search as $k => $v){
+            if (isset($search[$k]) && $search[$k] !== '') {
+                $param[$k] = $search[$k];
+            }
+        }
+        return $param;
+    }
+
+    /**
      * 空对象
      */
     public static function xeEmptyObject()
