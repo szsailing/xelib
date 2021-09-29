@@ -148,19 +148,19 @@ class CustomUtils
              */
             $request = Context::get(ServerRequestInterface::class);
             $ip_addr = $request->getHeaderLine('x-forwarded-for');
-            if (self::xzxVerifyIp($ip_addr)) {
+            if (self::xeVerifyIp($ip_addr)) {
                 return $ip_addr;
             }
             $ip_addr = $request->getHeaderLine('remote-host');
-            if (self::xzxVerifyIp($ip_addr)) {
+            if (self::xeVerifyIp($ip_addr)) {
                 return $ip_addr;
             }
             $ip_addr = $request->getHeaderLine('x-real-ip');
-            if (self::xzxVerifyIp($ip_addr)) {
+            if (self::xeVerifyIp($ip_addr)) {
                 return $ip_addr;
             }
             $ip_addr = $request->getServerParams()['remote_addr'] ?? '0.0.0.0';
-            if (self::xzxVerifyIp($ip_addr)) {
+            if (self::xeVerifyIp($ip_addr)) {
                 return $ip_addr;
             }
         } catch (Throwable $e) {
@@ -214,7 +214,15 @@ class CustomUtils
         foreach($search as $k => $v){
             if (isset($search[$k]) && $search[$k] !== '') {
                 $param[$k] = $search[$k];
-            }
+                if(preg_match('/Range$/', $k, $matches)){
+                    try {
+                        $param[$k][0] = DateUtils::dateToTimeStamp($param[$k][0]);
+                        $param[$k][1] = DateUtils::dateToTimeStamp($param[$k][1]);
+                    } catch (\Throwable $th) {
+                        unset($param[$k]);
+                    }                
+                }
+            } 
         }
         return $param;
     }
