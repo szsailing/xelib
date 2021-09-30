@@ -214,7 +214,7 @@ class CustomUtils
         foreach($search as $k => $v){
             if (isset($search[$k]) && $search[$k] !== '') {
                 $param[$k] = $search[$k];
-                if(preg_match('/Range$/', $k, $matches)){
+                if(preg_match('/TimeRange$/', $k, $matches)){
                     try {
                         $param[$k][0] = DateUtils::dateToTimeStamp($param[$k][0]);
                         $param[$k][1] = DateUtils::dateToTimeStamp($param[$k][1]);
